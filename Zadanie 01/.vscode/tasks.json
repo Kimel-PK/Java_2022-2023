@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Decode.class",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}\\bin"
+			},
+			"command": "javac ../src/*.java; mv -Force ../src/*.class ./; java Decode",
+			"group": {
+		  		"kind": "build",
+		  		"isDefault": true
+			}
+	  	}
+	]
+}
