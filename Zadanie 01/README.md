@@ -19,10 +19,11 @@ Zadanie polega na napisaniu kodu programu (klasy), który będzie dekodował dos
 
 ## Interfejs użytkownika
 
-Dane wprowadzane będą jako liczby całkowite (typ byte) - każda liczba oddzielnie. Wynik ma być dostępny w postaci ciągu znaków.
+Dane wprowadzane będą jako liczby całkowite (typ `byte`) - każda liczba oddzielnie. Wynik ma być dostępny w postaci ciągu znaków.
 
 W każdym momencie wprowadzania danych może zostać wykonana metoda reset. Ma ona doprowadzić do powrotu obiektu do stanu początkowego, tj. takiego, w którym żadne dane nie zostały do tej pory przez użytkownika wprowadzone.
-Przykłady
+
+## Przykłady
 
 Aby poprawić czytelność przykładów pomiędzy sekcjami i częściami sekcji dodane zostały spacje.
 
