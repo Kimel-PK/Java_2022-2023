@@ -33,7 +33,9 @@ public class Decoder {
 				// dodaj obecnie przetwarzany ciag na wyjscie
 				wyjscie += obecne_wyjscie.repeat (ilosc_powtorzen);
 				// wyzeruj zmienne pomocnicze
+				obecne_wyjscie = "";
 				czytaj_powtorzenia = false;
+				ilosc_powtorzen = 0;
 				cyfra_powtorzenia = 0;
 				return;
 			}
@@ -64,6 +66,7 @@ public class Decoder {
 	 * Przywrocenie poczatkowego stanu obiektu.
 	 */
 	public void reset() {
+		// wyzeruj zmienne pomocnicze
 		wyjscie = "";
 		obecne_wyjscie = "";
 		czytaj_powtorzenia = false;
