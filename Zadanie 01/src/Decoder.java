@@ -24,6 +24,9 @@ public class Decoder {
 			
 			// przejdz do odczytu ilosci powtorzen
 			
+			if (value < 0 || value > 9) // cyfra nie jest z zakresu 0-9
+				return;
+			
 			// przesun liczbe w lewo
 			ilosc_powtorzen *= 10;
 			// dodaj obecnie odczytana liczbe
