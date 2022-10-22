@@ -4,6 +4,7 @@ Legenda:
 
 - :white_check_mark: - gotowy zestaw, zgodny z testerem dostępnym po terminie 1
 - :question: - zestaw wykonany, nietestowany (możliwe błędy)
+- :warning: - w zestawie ktoś zauważył błąd i jeszcze go nie naprawiłem
 - :black_square_button: - zestaw niewykonany
 
 ---
@@ -12,7 +13,7 @@ Legenda:
 
 ---
 
-## [:question: Zadanie 2 - Obrazek](Zadanie%2002/)
+## [:warning: Zadanie 2 - Obrazek](Zadanie%2002/)
 
 ---
 
