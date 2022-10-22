@@ -18,7 +18,7 @@ Użytkownik dane wprowadzać i pobierać będzie poprzez interfejs o nazwie `Sim
 
 Poniżej obrazek będący wynikiem narysowaniu na płótnie o rozmiarze `13x13` kilku odcinków w różnych kolorach. Obrazek demonstruje także sposób kodowania kierunku w jakim rysowane mają być kolejne odcinki.
 
-> Wstawić obraz
+![Przyklad](https://user-images.githubusercontent.com/57668948/197338361-48f77cab-e8f3-49be-a442-0347722c82f8.png)
 
 ## Dostarczanie rozwiązania
 
