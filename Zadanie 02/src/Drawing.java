@@ -15,7 +15,7 @@ public class Drawing implements SimpleDrawing {
 		// kopiujemy koordynaty poczatkowe
 		obecnyPunkt.x = input.getInitialFirstCoordinate();
 		// plotno ma os Y odwrocona wzgledem informatycznej tablicy
-		obecnyPunkt.y = rozmiar - 1 - input.getInitialSecondCoordinate();
+		obecnyPunkt.y = input.getInitialSecondCoordinate();
 	}
 	
 	public void draw(Segment segment) {
@@ -27,32 +27,31 @@ public class Drawing implements SimpleDrawing {
 			case 1:
 				// kierunek: prawo
 				for (int i = 0; i < dlugosc && obecnyPunkt.x < rozmiar; i++, obecnyPunkt.x++) {
-					// to co uznajemy za X i Y w ukladzie wspolrzednych w tablicy wyglada odwrotnie z tad ten zapis
-					obrazek [obecnyPunkt.y][obecnyPunkt.x] = kolor;
+					obrazek [obecnyPunkt.x][obecnyPunkt.y] = kolor;
 				}
 				// po wykonaniu petli przesuwamy sie o 1 za daleko, wiec wracamy
 				obecnyPunkt.x--;
 				break;
 			case 2:
 				// kierunek: gora
-				for (int i = 0; i < dlugosc && obecnyPunkt.y >= 0; i++, obecnyPunkt.y--) {
-					obrazek [obecnyPunkt.y][obecnyPunkt.x] = kolor;
+				for (int i = 0; i < dlugosc && obecnyPunkt.y < rozmiar; i++, obecnyPunkt.y++) {
+					obrazek [obecnyPunkt.x][obecnyPunkt.y] = kolor;
 				}
-				obecnyPunkt.y++;
+				obecnyPunkt.y--;
 				break;
 			case -1:
 				// kierunek: lewo
 				for (int i = 0; i < dlugosc && obecnyPunkt.x >= 0; i++, obecnyPunkt.x--) {
-					obrazek [obecnyPunkt.y][obecnyPunkt.x] = kolor;
+					obrazek [obecnyPunkt.x][obecnyPunkt.y] = kolor;
 				}
 				obecnyPunkt.x++;
 				break;
 			case -2:
 				// kierunek: dol
-				for (int i = 0; i < dlugosc && obecnyPunkt.y < rozmiar; i++, obecnyPunkt.y++) {
-					obrazek [obecnyPunkt.y][obecnyPunkt.x] = kolor;
+				for (int i = 0; i < dlugosc && obecnyPunkt.y >= 0; i++, obecnyPunkt.y--) {
+					obrazek [obecnyPunkt.x][obecnyPunkt.y] = kolor;
 				}
-				obecnyPunkt.y--;
+				obecnyPunkt.y++;
 				break;
 			// zignoruj inne wartosci
 		}
