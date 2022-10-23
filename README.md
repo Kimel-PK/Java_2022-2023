@@ -13,7 +13,7 @@ Legenda:
 
 ---
 
-## [:warning: Zadanie 2 - Obrazek](Zadanie%2002/)
+## [:question: Zadanie 2 - Obrazek](Zadanie%2002/)
 
 ---
 
