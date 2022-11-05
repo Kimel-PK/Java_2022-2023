@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Kompiluj i uruchom Tester.class",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}\\bin"
+			},
+			"command": "javac ../src/*.java; mv -Force ../src/*.class ./; java Tester",
+			"group": {
+		  		"kind": "build",
+		  		"isDefault": true
+			}
+	  	},
+		  {
+			"label": "Kompiluj i uruchom Testing.class",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}\\bin"
+			},
+			"command": "javac ../src/*.java; mv -Force ../src/*.class ./; java Testing",
+			"group": {
+		  		"kind": "build",
+		  		"isDefault": true
+			}
+	  	}
+	]
+}

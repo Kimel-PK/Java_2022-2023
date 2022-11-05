@@ -13,11 +13,11 @@ Legenda:
 
 ---
 
-## [:question: Zadanie 2 - Obrazek](Zadanie%2002/)
+## [:white_check_mark: Zadanie 2 - Obrazek](Zadanie%2002/)
 
 ---
 
-## [:black_square_button: Zadanie 3 - ???](Zadanie%2003/)
+## [:question: Zadanie 3 - Szachownica](Zadanie%2003/)
 
 ---
 
