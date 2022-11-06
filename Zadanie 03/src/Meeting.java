@@ -133,15 +133,6 @@ public class Meeting implements MeetingInterface {
 		
 		return sasiedzi;
 	}
-	
-	// przeciazenie metody toString() potrzebne tylko w testerze
-    public String toString() {
-		String string = "";
-		for (PawnPosition pionek : getAllPawns()) {
-			string += pionek.pawnId() + " - (" + pionek.x() + "," + pionek.y() + ")\n";
-		}
-		return string;
-    }
 }
 
 // klasa reprezentujaca pare id pionka -> pozycja (mozna tez uzyc Pair<,>)

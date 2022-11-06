@@ -35,7 +35,7 @@ public class Tester {
 		meeting.addMeetingPoint(new Position2D (3, 3));
 		meeting.move();
 		
-		if (spodziewaneWyniki[0].equals(meeting.toString()) && spodziewaniSasiedzi.get(0).equals(meeting.getNeighbours(1))) {
+		if (spodziewaneWyniki[0].equals(MeetingToString (meeting)) && spodziewaniSasiedzi.get(0).equals(meeting.getNeighbours(1))) {
 			System.out.println("Test 1 zaliczony!");
 			zaliczoneTesty++;
 		} else {
@@ -92,7 +92,7 @@ public class Tester {
 		meeting.addMeetingPoint(new Position2D (4, 4));
 		meeting.move();
 		
-		if (spodziewaneWyniki[1].equals(meeting.toString()) && spodziewaniSasiedzi.get(1).equals(meeting.getNeighbours(2))) {
+		if (spodziewaneWyniki[1].equals(MeetingToString (meeting)) && spodziewaniSasiedzi.get(1).equals(meeting.getNeighbours(2))) {
 			System.out.println("Test 2 zaliczony!");
 			zaliczoneTesty++;
 		} else {
@@ -135,7 +135,7 @@ public class Tester {
 		meeting.addMeetingPoint(new Position2D(20, 20));
 		meeting.move();
 		
-		if (spodziewaneWyniki[2].equals(meeting.toString()) && spodziewaniSasiedzi.get(2).equals(meeting.getNeighbours(10))) {
+		if (spodziewaneWyniki[2].equals(MeetingToString (meeting)) && spodziewaniSasiedzi.get(2).equals(meeting.getNeighbours(10))) {
 			System.out.println("Test 3 zaliczony!");
 			zaliczoneTesty++;
 		} else {
@@ -179,6 +179,15 @@ public class Tester {
 		if (spodziewaneWyniki.length == zaliczoneTesty)
 			System.out.println("Wszystkie testy zaliczone pomyslnie!");
 	}
+	
+    public static String MeetingToString (Meeting meeting) {
+		Set<PawnPosition> pionki = meeting.getAllPawns();
+		String string = "";
+		for (PawnPosition pionek : pionki) {
+			string += pionek.pawnId() + " - (" + pionek.x() + "," + pionek.y() + ")\n";
+		}
+		return string;
+    }
 }
 
 class Szachownica {
