@@ -17,11 +17,11 @@ Legenda:
 
 ---
 
-## [:question: Zadanie 3 - Szachownica](Zadanie%2003/)
+## [:white_check_mark: Zadanie 3 - Szachownica](Zadanie%2003/)
 
 ---
 
-## [:black_square_button: Zadanie 4 - ???](Zadanie%2004/)
+## [:black_square_button: Zadanie 4 - Odcinki](Zadanie%2004/)
 
 ---
 
