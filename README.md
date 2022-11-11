@@ -1,6 +1,10 @@
 # Java_2022-2023
 
-Legenda:
+Repozytorium zawiera rozwiązania zadań z przedmiotu Java prowadzonego na WFAIS w roku akademickim 2022-2023.
+
+> Uwaga! Nie gwarantuje 100% poprawnego rozwiązania w pierwszym terminie oddania zadania. Zestawy zostały oznaczone odpowiednimi symbolami.
+
+## Legenda
 
 - :white_check_mark: - gotowy zestaw, zgodny z testerem dostępnym po terminie 1
 - :question: - zestaw wykonany, nietestowany (możliwe błędy)
@@ -21,7 +25,7 @@ Legenda:
 
 ---
 
-## [:black_square_button: Zadanie 4 - Odcinki](Zadanie%2004/)
+## [:question: Zadanie 4 - Trasy w grafie](Zadanie%2004/)
 
 ---
 
