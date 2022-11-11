@@ -38,10 +38,10 @@ Tester sprawdza poprawność działania klasy `Lines` z wykorzystaniem poniższy
 
 Trasa `A -> C`
 
-...
+![graf 1](https://user-images.githubusercontent.com/57668948/201437909-4a20c662-6a2b-42d4-8596-cd0055843956.png)
 
 ### Graf 2
 
 Trasa `A -> E`
 
-...
+![graf 2](https://user-images.githubusercontent.com/57668948/201437929-24b806d8-5b59-47b2-b0df-3a08bb20a52e.png)
