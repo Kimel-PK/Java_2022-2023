@@ -188,7 +188,7 @@ public class Tester {
 		));
 		
 		start.add (punkty.get (1).get(0)); // A
-		koniec.add (punkty.get (1).get(2)); // C
+		koniec.add (punkty.get (1).get(4)); // E
 		
 		testy.add(
 			new Test (

@@ -29,3 +29,19 @@ Istnienie pętli nie może doprowadzić do "zawieszenia" się programu.
 ## Dostarczanie rozwiązania
 
 Proszę o dostarczenie kodu klasy `Lines`. Klasa ma implementować interfejs `LinesInterface` zgodnie z dokumentacją i opisem. Jeśli pojawi się w niej konstruktor, to musi on być konstruktorem bezparametrowym.
+
+## Tester
+
+Tester sprawdza poprawność działania klasy `Lines` z wykorzystaniem poniższych grafów.
+
+### Graf 1
+
+Trasa `A -> C`
+
+...
+
+### Graf 2
+
+Trasa `A -> E`
+
+...
