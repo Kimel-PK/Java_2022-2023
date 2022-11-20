@@ -29,6 +29,8 @@ Repozytorium zawiera rozwiązania zadań z przedmiotu Java prowadzonego na WFAIS
 
 ## [:wavy_dash: Zadanie 4 - Trasy w grafie](Zadanie%2004/)
 
+Rozwiązanie zalicza 7/10 testów
+
 ---
 
 ## [:construction: Zadanie 5 - Serwis aukcyjny](Zadanie%2005/)
