@@ -7,6 +7,7 @@ Repozytorium zawiera rozwiązania zadań z przedmiotu Java prowadzonego na WFAIS
 ## Legenda
 
 - :white_check_mark: - gotowy zestaw, zgodny z testerem dostępnym po terminie 1
+- :wavy_dash: - rozwiązanie zalicza tylko część oficjalnych testów
 - :question: - zestaw wykonany, nietestowany (możliwe błędy)
 - :warning: - w zestawie ktoś zauważył błąd i jeszcze go nie naprawiłem
 - :black_square_button: - zestaw niewykonany
@@ -25,11 +26,11 @@ Repozytorium zawiera rozwiązania zadań z przedmiotu Java prowadzonego na WFAIS
 
 ---
 
-## [:question: Zadanie 4 - Trasy w grafie](Zadanie%2004/)
+## [:wavy_dash: Zadanie 4 - Trasy w grafie](Zadanie%2004/)
 
 ---
 
-## [:black_square_button: Zadanie 5 - ???](Zadanie%2005/)
+## [:black_square_button: Zadanie 5 - Serwis aukcyjny](Zadanie%2005/)
 
 ---
 
