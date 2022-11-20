@@ -105,10 +105,10 @@ class PrzedmiotAukcji implements Aukcja.PrzedmiotAukcji {
 
 class Powiadomienie implements Aukcja.Powiadomienie {
 	public void przebitoTwojąOfertę(Aukcja.PrzedmiotAukcji przedmiot) {
-		System.out.println("================ POWIADOMIENIE ================");
-		System.out.println("Przebito twoją ofertę '" + przedmiot.nazwaPrzedmiotu() + "'");
-		System.out.println("Aktualna cena " + przedmiot.aktualnaCena());
-		System.out.println("Aktualna oferta " + przedmiot.aktualnaOferta());
-		System.out.println("===============================================");
+		System.out.println("	================ POWIADOMIENIE ================");
+		System.out.println("	Przebito twoją ofertę '" + przedmiot.nazwaPrzedmiotu() + "'");
+		System.out.println("	Aktualna cena " + przedmiot.aktualnaCena());
+		System.out.println("	Aktualna oferta " + przedmiot.aktualnaOferta());
+		System.out.println("	===============================================");
 	}
 }
