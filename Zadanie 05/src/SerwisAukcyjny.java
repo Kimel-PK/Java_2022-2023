@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 public class SerwisAukcyjny implements Aukcja {
 	
+	// mapa przechowujaca 
 	Map<String, Powiadomienie> uzytkownicy = new HashMap<> ();
 	Map<Integer, DaneAukcji> przedmioty = new HashMap<> ();
 	
@@ -39,11 +40,17 @@ public class SerwisAukcyjny implements Aukcja {
 	}
 	
 	public String ktoWygrywa (int identyfikatorPrzedmiotuAukcji) {
-		return przedmioty.get (identyfikatorPrzedmiotuAukcji).najwyzszaOferta.uzytkownik;
+		if (przedmioty.get (identyfikatorPrzedmiotuAukcji).najwyzszaOferta != null)
+			return przedmioty.get (identyfikatorPrzedmiotuAukcji).najwyzszaOferta.uzytkownik;
+		else
+			return null;
 	}
 	
 	public int najwyższaOferta (int identyfikatorPrzedmiotuAukcji) {
-		return przedmioty.get (identyfikatorPrzedmiotuAukcji).najwyzszaOferta.oferowanaCena;
+		if (przedmioty.get (identyfikatorPrzedmiotuAukcji).najwyzszaOferta != null)
+			return przedmioty.get (identyfikatorPrzedmiotuAukcji).najwyzszaOferta.oferowanaCena;
+		else
+			return 0;
 	}
 	
 	class PrzedmiotAukcji implements Aukcja.PrzedmiotAukcji {
