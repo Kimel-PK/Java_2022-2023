@@ -33,7 +33,7 @@ Rozwiązanie zalicza 7/10 testów
 
 ---
 
-## [:construction: Zadanie 5 - Serwis aukcyjny](Zadanie%2005/)
+## [:question: Zadanie 5 - Serwis aukcyjny](Zadanie%2005/)
 
 ---
 
