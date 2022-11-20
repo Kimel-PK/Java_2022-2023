@@ -10,6 +10,7 @@ Repozytorium zawiera rozwiązania zadań z przedmiotu Java prowadzonego na WFAIS
 - :wavy_dash: - rozwiązanie zalicza tylko część oficjalnych testów
 - :question: - zestaw wykonany, nietestowany (możliwe błędy)
 - :warning: - w zestawie ktoś zauważył błąd i jeszcze go nie naprawiłem
+- :construction: - zestaw w trakcie prac
 - :black_square_button: - zestaw niewykonany
 
 ---
@@ -30,7 +31,7 @@ Repozytorium zawiera rozwiązania zadań z przedmiotu Java prowadzonego na WFAIS
 
 ---
 
-## [:black_square_button: Zadanie 5 - Serwis aukcyjny](Zadanie%2005/)
+## [:construction: Zadanie 5 - Serwis aukcyjny](Zadanie%2005/)
 
 ---
 

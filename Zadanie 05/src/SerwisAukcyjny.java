@@ -1,83 +1,130 @@
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.LinkedList;
+
 public class SerwisAukcyjny implements Aukcja {
-
-	/**
-	 * Metoda do dodawania użytkowika do systemu aukcyjnego. Użytkownicy rozróżniani
-	 * są za pomocą ich unikalnego username.
-	 * 
-	 * @param username unikalne nazwa użytkownika
-	 * @param kontakt  obiekt za pomocą należy powiadamiać tego użytkownika, gdy
-	 *                 ktoś inny przebije ofertę na przedmiot, którym użytkownik
-	 *                 jest zainteresowany.
-	 */
-	public void dodajUżytkownika(String username, Powiadomienie kontakt) {}
-
-	/**
-	 * Metoda pozwala na dodanie przedmiotu do serwisu aukcyjnego.
-	 * 
-	 * @param przedmiot dodawany do serwisu przedmiot
-	 */
-	public void dodajPrzedmiotAukcji(PrzedmiotAukcji przedmiot) {}
-
-	/**
-	 * Użytkownik o podanym username zgłasza zainteresowanie przedmiotem aktucji o
-	 * podanym identyfikatorze. Od chwili wykonania tej metody użytkownik jest
-	 * powiadamiany każdorazowo, gdy jego oferta zostanie przebita.
-	 * 
-	 * @param username                      nazwa użytkownika serwisu
-	 * @param identyfikatorPrzedmiotuAukcji identyfikator przedmiotu aukcji
-	 */
-	public void subskrypcjaPowiadomień(String username, int identyfikatorPrzedmiotuAukcji) {}
-
-	/**
-	 * Metoda kończy obserwację danego przedmiotu przez użytkownika o podanym
-	 * username. Rezygnacja z powiadomień oznacza zaprzestanie wysyłania
-	 * powiadomień.
-	 * 
-	 * @param username                      nazwa użytkownika serwisu
-	 * @param identyfikatorPrzedmiotuAukcji identyfikator przedmiotu aukcji
-	 */
-	public void rezygnacjaZPowiadomień(String username, int identyfikatorPrzedmiotuAukcji) {}
-
-	/**
-	 * Użytkownik przekazuje ofertę zakupu przedmiotu za podaną kwotę. Wszystkie
-	 * osoby obserwujące ten sam przedmiot, a oferujące niższą kwotę powinny zostać
-	 * automatycznie powiadomione o przebiciu ich oferty.
-	 * 
-	 * @param username                      nazwa użytkownika serwisu
-	 * @param identyfikatorPrzedmiotuAukcji identyfikator przedmiotu aukcji
-	 * @param oferowanaKwota                zaoferowana kwota w groszach
-	 */
-	public void oferta(String username, int identyfikatorPrzedmiotuAukcji, int oferowanaKwota) {}
-
-	/**
-	 * Za pomocą tej metody zamykana jest aukcja. Najlepsza oferta wygrywa. Nowe
-	 * oferty są ignorowane.
-	 * 
-	 * @param identyfikatorPrzedmiotuAukcji identyfikator przedmiotu aukcji
-	 */
-	public void koniecAukcji(int identyfikatorPrzedmiotuAukcji) {}
-
-	/**
-	 * Metoda pozwala poznać nazwę użytkownika, który zaoferował nawyższą kwotę za
-	 * przedmiot aukcji. Jeśli aukcja została zakończona, metoda pozwala poznać dane
-	 * osoby, która aukcję na dany przedmiot wygrała.
-	 * 
-	 * @param identyfikatorPrzedmiotuAukcji identyfikator przedmiotu aukcji
-	 * @return nazwa użytkownika wygrywającego aukcję
-	 */
-	public String ktoWygrywa(int identyfikatorPrzedmiotuAukcji) {
-		return null;
+	
+	Map<String, Powiadomienie> uzytkownicy = new HashMap<> ();
+	Map<Integer, DaneAukcji> przedmioty = new HashMap<> ();
+	
+	public void dodajUżytkownika (String username, Powiadomienie kontakt) {
+		uzytkownicy.put (username, kontakt);
 	}
-
-	/**
-	 * Metoda pozwala poznać najlepszą ofertę za dany przedmiot. Kwota podawna jest
-	 * w groszach.
-	 * 
-	 * @param identyfikatorPrzedmiotuAukcji identyfikator przedmiotu aukcji
-	 * @return najwyższa ofera za przedmiot
-	 */
-	public int najwyższaOferta(int identyfikatorPrzedmiotuAukcji) {
-		return 0;
+	
+	public void dodajPrzedmiotAukcji (Aukcja.PrzedmiotAukcji przedmiot) {
+		PrzedmiotAukcji przedmiotAukcji = new PrzedmiotAukcji(przedmiot.identyfikator(), przedmiot.nazwaPrzedmiotu(), przedmiot.aktualnaCena());
+		przedmioty.put (przedmiot.identyfikator(), new DaneAukcji (przedmiotAukcji, new LinkedList<>(), new LinkedList<>()));
 	}
-
+	
+	public void subskrypcjaPowiadomień (String username, int identyfikatorPrzedmiotuAukcji) {
+		przedmioty.get (identyfikatorPrzedmiotuAukcji).subskrybenci.add(username);
+	}
+	
+	public void rezygnacjaZPowiadomień (String username, int identyfikatorPrzedmiotuAukcji) {
+		przedmioty.get (identyfikatorPrzedmiotuAukcji).subskrybenci.remove(username);
+	}
+	
+	public void oferta (String username, int identyfikatorPrzedmiotuAukcji, int oferowanaKwota) {
+		DaneAukcji daneAukcji = przedmioty.get (identyfikatorPrzedmiotuAukcji);
+		
+		if (!daneAukcji.otwarta)
+			return;
+			
+		daneAukcji.DodajOferte (new Oferta(username, oferowanaKwota));
+	}
+	
+	public void koniecAukcji (int identyfikatorPrzedmiotuAukcji) {
+		przedmioty.get (identyfikatorPrzedmiotuAukcji).otwarta = false;
+	}
+	
+	public String ktoWygrywa (int identyfikatorPrzedmiotuAukcji) {
+		return przedmioty.get (identyfikatorPrzedmiotuAukcji).najwyzszaOferta.uzytkownik;
+	}
+	
+	public int najwyższaOferta (int identyfikatorPrzedmiotuAukcji) {
+		return przedmioty.get (identyfikatorPrzedmiotuAukcji).najwyzszaOferta.oferowanaCena;
+	}
+	
+	class PrzedmiotAukcji implements Aukcja.PrzedmiotAukcji {
+		
+		int id;
+		String nazwaPrzedmotu;
+		int aktualnaOferta;
+		int cena;
+		
+		public PrzedmiotAukcji (int _id, String _nazwaPrzedmotu, int _cena) {
+			id = _id;
+			nazwaPrzedmotu = _nazwaPrzedmotu;
+			cena = _cena;
+		}
+		
+		public int identyfikator () {
+			return id;
+		}
+		
+		public String nazwaPrzedmiotu () {
+			return nazwaPrzedmotu;
+		}
+		
+		public int aktualnaOferta () {
+			return aktualnaOferta;
+		}
+		
+		public int aktualnaCena () {
+			if (aktualnaOferta > cena)
+				return aktualnaOferta;
+			else
+				return cena;
+		}
+	}
+	
+	class DaneAukcji {
+		Boolean otwarta = true;
+		PrzedmiotAukcji przedmiot;
+		List<Oferta> oferty;
+		List<String> subskrybenci;
+		
+		Oferta najwyzszaOferta;
+		
+		public DaneAukcji (PrzedmiotAukcji _przedmiot, List<Oferta> _oferty, List<String> _subskrybenci) {
+			przedmiot = _przedmiot;
+			oferty = _oferty;
+			subskrybenci = _subskrybenci;
+		}
+		
+		public void DodajOferte (Oferta nowaOferta) {
+			
+			oferty.add(nowaOferta);
+			
+			if (oferty.size() == 1) {
+				najwyzszaOferta = nowaOferta;
+				przedmiot.aktualnaOferta = nowaOferta.oferowanaCena;
+				return;
+			}
+			
+			for (Oferta oferta : oferty) {
+				if (nowaOferta.oferowanaCena > oferta.oferowanaCena) {
+					najwyzszaOferta = nowaOferta;
+					przedmiot.aktualnaOferta = nowaOferta.oferowanaCena;
+					for (String subskrybent : subskrybenci) {
+						if (!subskrybent.equals(nowaOferta.uzytkownik)) {
+							uzytkownicy.get(subskrybent).przebitoTwojąOfertę(przedmiot);
+						}
+					}
+					break;
+				}
+			}
+		}
+	}
+	
+	class Oferta {
+		String uzytkownik;
+		int oferowanaCena;
+		
+		public Oferta (String _uzytkownik, int _oferowanaCena) {
+			uzytkownik = _uzytkownik;
+			oferowanaCena = _oferowanaCena;
+		}
+	}
 }
